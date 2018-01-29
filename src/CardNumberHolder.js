@@ -7,13 +7,13 @@ class CardNumberHolder extends Component {
     cardNumber: '' 
   }
 
-  handleChange = () => {
-
+  handleChange = event => {
+    this.setState({cardNumber: event.target.value})
   }
 
   render() {
     return (
-      <CardNumberInput onChange={this.handleChange} />
+      <CardNumberInput onChange={this.handleChange} cardNumber={this.state.cardNumber} />
     );
   }
 }

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { normalize } from 'path';
 
 class CardNumberInput extends Component {
-  format() {
+
+   format() {
 
   }
 
@@ -15,7 +17,7 @@ class CardNumberInput extends Component {
   
   render() {
     return (
-      <input />
+      <input onChange={this.props.onChange} />
     );
   }
 }
