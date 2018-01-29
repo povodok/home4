@@ -3,21 +3,24 @@ import { normalize } from 'path';
 
 class CardNumberInput extends Component {
 
-   format() {
-
+  state = {
+    number: '',
+    formNumber: ''
   }
-
-  normalize() {
-
+  
+  format = () => {
   }
 
   componentWillReceiveProps(nextProps) {
-    
+    const normNum = nextProps.cardNumber.replace(/ /g, '')
+    const formNum = normNum.replace(/(.{4})/g,"$1 ")
+    this.setState({number: formNum})
+    console.log(formNum)
   }
   
   render() {
     return (
-      <input onChange={this.props.onChange} />
+      <input onChange={this.props.onChange} value={this.state.number} />
     );
   }
 }
